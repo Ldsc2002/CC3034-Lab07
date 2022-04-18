@@ -1,4 +1,3 @@
-```
 ### Development Scripts
 
 ```bash
