@@ -4,8 +4,8 @@ function Movements(array: string[], key) {
 	let temp = ""
     let move = ""
     
-    String.prototype.replaceAt = function(index, replacement) {
-        return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+    let replaceAt = function(string, index, replacement) {
+        return string.substr(0, index) + replacement + string.substr(index + replacement.length);
     }
 
     if (key === 'ArrowUp') {
@@ -38,11 +38,11 @@ function Movements(array: string[], key) {
         
             if (temp != "-" && temp != "+" && temp != "|"){
                 if (temp == "g"){
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row] = replaceAt(array[row], pos, " ")
                     alert("You Win!")
                 } else {			
-                    array[row-1] = array[row - 1].replaceAt(pos, "p")
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row-1] = replaceAt(array[row - 1], pos, "p")
+                    array[row] = replaceAt(array[row], pos, " ")
                 }
             } else {
                 alert("Auch! A Wall!")
@@ -54,11 +54,11 @@ function Movements(array: string[], key) {
         
             if (temp != "-" &&  temp != "+" &&  temp != "|" ){
                 if (temp == "g") {
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row] = replaceAt(array[row], pos, " ")
                     alert("You Win!")
                 } else {	
-                    array[row + 1] = array[row + 1].replaceAt(pos, "p")
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row + 1] = replaceAt(array[row + 1], pos, "p")
+                    array[row] = replaceAt(array[row], pos, " ")
                 }
             }else{
                 alert("Auch! A Wall!")
@@ -68,11 +68,11 @@ function Movements(array: string[], key) {
         
             if (temp != "-" &&  temp != "+" &&  temp != "|" ) {
                 if (temp == "g") {
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row] = replaceAt(array[row], pos, " ")
                     alert("You Win!")
                 } else {				
-                    array[row] = array[row].replaceAt(pos - 1, "p")
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row] = replaceAt(array[row], pos - 1, "p")
+                    array[row] = replaceAt(array[row], pos, " ")
                 }		
             } else {
                 alert("Auch! A Wall!")
@@ -83,11 +83,11 @@ function Movements(array: string[], key) {
         
             if (temp != "-" &&  temp != "+" &&  temp != "|" ) {
                 if (temp == "g") {
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row] = replaceAt(array[row], pos, " ")
                     alert("You Win!")
                 } else {				
-                    array[row] = array[row].replaceAt(pos + 1, "p")
-                    array[row] = array[row].replaceAt(pos, " ")
+                    array[row] = replaceAt(array[row], pos + 1, "p")
+                    array[row] = replaceAt(array[row], pos, " ")
                 }
             } else {
                 alert("Auch! A Wall!")
