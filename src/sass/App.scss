@@ -3,8 +3,6 @@ $color_1: white;
 
 .App {
 	text-align: center;
-}
-.App-header {
 	background-color: $background-color_1;
 	min-height: 100vh;
 	display: flex;
@@ -12,5 +10,11 @@ $color_1: white;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
+	color: $color_1;
+}
+
+p {
+	letter-spacing: 20px;
+	font-size: 80%;
 	color: $color_1;
 }
