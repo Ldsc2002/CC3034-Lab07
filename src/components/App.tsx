@@ -57,7 +57,7 @@ function App() {
             <input placeholder="Ancho" onChange={handleWidth}/>
             <input placeholder="Ancho" onChange={handleHeight}/>
 
-            <button onClick={(getMaze)}>New Game</button>
+            <button onClick={getMaze}>New Game</button>
 
             <Maze maze={maze}/>
 
