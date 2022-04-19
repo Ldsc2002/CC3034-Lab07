@@ -18,80 +18,82 @@ function Movements(array: string[], key) {
         move = "RIGHT"
     }
 	
-    let finished = false
-    for (let i = 0; i < array.length; i++) {        
-        if (array[i].includes("p")){
-            finished = true
-            pos = array[i].indexOf("p")
-            row = i
+    if (move != "") {
+        let finished = false
+        for (let i = 0; i < array.length; i++) {        
+            if (array[i].includes("p")){
+                finished = true
+                pos = array[i].indexOf("p")
+                row = i
+            }
+        }
+
+        if (!finished) {
+            alert("Ya has completado el juego")
+            return array
+        }
+
+        if(move == "UP"){	
+            temp = array[row - 1][pos]
+        
+            if (temp != "-" && temp != "+" && temp != "|"){
+                if (temp == "g"){
+                    array[row] = array[row].replaceAt(pos, " ")
+                    alert("You Win!")
+                } else {			
+                    array[row-1] = array[row - 1].replaceAt(pos, "p")
+                    array[row] = array[row].replaceAt(pos, " ")
+                }
+            } else {
+                alert("Auch! A Wall!")
+            }
+        }
+        
+        else if(move == "DOWN"){
+            temp = array[row +1][pos]
+        
+            if (temp != "-" &&  temp != "+" &&  temp != "|" ){
+                if (temp == "g") {
+                    array[row] = array[row].replaceAt(pos, " ")
+                    alert("You Win!")
+                } else {	
+                    array[row + 1] = array[row + 1].replaceAt(pos, "p")
+                    array[row] = array[row].replaceAt(pos, " ")
+                }
+            }else{
+                alert("Auch! A Wall!")
+            }
+        } else if(move == "LEFT") {
+            let temp = array[row][pos-1]
+        
+            if (temp != "-" &&  temp != "+" &&  temp != "|" ) {
+                if (temp == "g") {
+                    array[row] = array[row].replaceAt(pos, " ")
+                    alert("You Win!")
+                } else {				
+                    array[row] = array[row].replaceAt(pos - 1, "p")
+                    array[row] = array[row].replaceAt(pos, " ")
+                }		
+            } else {
+                alert("Auch! A Wall!")
+            }
+        }
+        else if (move  == "RIGHT") {
+            let temp = array[row][pos + 1]
+        
+            if (temp != "-" &&  temp != "+" &&  temp != "|" ) {
+                if (temp == "g") {
+                    array[row] = array[row].replaceAt(pos, " ")
+                    alert("You Win!")
+                } else {				
+                    array[row] = array[row].replaceAt(pos + 1, "p")
+                    array[row] = array[row].replaceAt(pos, " ")
+                }
+            } else {
+                alert("Auch! A Wall!")
+            }
         }
     }
-
-    if (!finished) {
-        alert("Ya has completado el juego")
-        return array
-    }
-
-    if(move == "UP"){	
-		temp = array[row - 1][pos]
-	
-		if (temp != "-" && temp != "+" && temp != "|"){
-			if (temp == "g"){
-				array[row] = array[row].replaceAt(pos, " ")
-				alert("You Win!")
-			} else {			
-				array[row-1] = array[row - 1].replaceAt(pos, "p")
-				array[row] = array[row].replaceAt(pos, " ")
-			}
-		} else {
-			alert("Auch! A Wall!")
-		}
-	}
-	
-	else if(move == "DOWN"){
-		temp = array[row +1][pos]
-	
-		if (temp != "-" &&  temp != "+" &&  temp != "|" ){
-			if (temp == "g") {
-				array[row] = array[row].replaceAt(pos, " ")
-				alert("You Win!")
-			} else {	
-				array[row + 1] = array[row + 1].replaceAt(pos, "p")
-				array[row] = array[row].replaceAt(pos, " ")
-			}
-		}else{
-			alert("Auch! A Wall!")
-		}
-	} else if(move == "LEFT") {
-		let temp = array[row][pos-1]
-	
-		if (temp != "-" &&  temp != "+" &&  temp != "|" ) {
-			if (temp == "g") {
-				array[row] = array[row].replaceAt(pos, " ")
-				alert("You Win!")
-			} else {				
-				array[row] = array[row].replaceAt(pos - 1, "p")
-				array[row] = array[row].replaceAt(pos, " ")
-			}		
-		} else {
-			alert("Auch! A Wall!")
-		}
-	}
-	else if (move  == "RIGHT") {
-		let temp = array[row][pos + 1]
-	
-		if (temp != "-" &&  temp != "+" &&  temp != "|" ) {
-			if (temp == "g") {
-				array[row] = array[row].replaceAt(pos, " ")
-				alert("You Win!")
-			} else {				
-				array[row] = array[row].replaceAt(pos + 1, "p")
-				array[row] = array[row].replaceAt(pos, " ")
-			}
-		} else {
-			alert("Auch! A Wall!")
-		}
-	}
     return array
 }
 
