@@ -2,8 +2,6 @@ import React from 'react';
 import { hot } from "react-hot-loader/root";
 
 function Maze({maze}) {
-    console.log("Here")
-
     return(
         <div className='container'> 
         {maze.map(temp =>(
