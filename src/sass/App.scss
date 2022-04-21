@@ -1,10 +1,14 @@
-$background-color_1: #282c34;
-$color_1: white;
+$color_1: black;
 
 .App {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); 
+    min-height: 100vh;
+}
+
+#start, #game, #menu {
+    min-height: 100vh;
 	text-align: center;
-	background-color: $background-color_1;
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,8 +17,20 @@ $color_1: white;
 	color: $color_1;
 }
 
+#menu, #game {
+    display: none;
+}
+
 p {
 	letter-spacing: 20px;
-	font-size: 80%;
+	font-size: 60%;
 	color: $color_1;
+}
+
+input {
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
 }

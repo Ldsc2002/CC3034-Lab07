@@ -1,17 +1,34 @@
 .App {
-  text-align: center;
-  background-color: #282c34;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(0deg, rgb(34, 193, 195) 0%, rgb(253, 187, 45) 100%);
   min-height: 100vh;
+}
+
+#start, #game, #menu {
+  min-height: 100vh;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+}
+
+#menu, #game {
+  display: none;
 }
 
 p {
   letter-spacing: 20px;
-  font-size: 80%;
-  color: white;
+  font-size: 60%;
+  color: black;
+}
+
+input {
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
 }

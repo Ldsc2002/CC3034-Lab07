@@ -18,6 +18,38 @@ function App() {
         setHeight(event.target.value);  
     };
 
+	const goToMenu = () => {
+        let start: HTMLElement | null = document.getElementById("start")
+        let menu: HTMLElement | null = document.getElementById("menu")
+
+        if (menu != null && start != null) {
+            menu.style.display = "flex"
+            start.style.display = "none"
+        }
+    };
+
+	const startGame = () => {
+        let menu: HTMLElement | null = document.getElementById("menu")
+        let game: HTMLElement | null = document.getElementById("game")
+
+        if (menu != null && game != null) {
+            game.style.display = "flex"
+            menu.style.display = "none"
+        }
+    };
+
+    const restartGame = () => {
+        setMaze([...[]])
+
+        let menu: HTMLElement | null = document.getElementById("menu")
+        let game: HTMLElement | null = document.getElementById("game")
+
+        if (menu != null && game != null) {
+            menu.style.display = "flex"
+            game.style.display = "none"
+        }
+    };
+
 	const getMaze = () => {
         let array : string[] = []
 
@@ -39,6 +71,7 @@ function App() {
 			});
 
             setMaze(array)
+            startGame()
 		});
 	}
 
@@ -54,13 +87,23 @@ function App() {
 
     return (
         <div className="App">
-            <input placeholder="Ancho" onChange={handleWidth}/>
-            <input placeholder="Ancho" onChange={handleHeight}/>
+            <div id="start">
+                <button onClick={goToMenu}>New Game</button>
+            </div>
 
-            <button onClick={getMaze}>New Game</button>
+            <div id="menu">
+                <input placeholder="Ancho" onChange={handleWidth}/>
+                <input placeholder="Ancho" onChange={handleHeight}/>
 
-            <Maze maze={maze}/>
+                <button onClick={getMaze}>New Game</button>
 
+            </div>
+
+            <div id="game">
+                <button onClick={restartGame}>New Game</button>
+
+                <Maze maze={maze}/>
+            </div>        
         </div>
     );
 }
