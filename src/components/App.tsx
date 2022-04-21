@@ -78,10 +78,8 @@ function App() {
     useEffect(() =>{
 		document.onkeydown = (e) => {
 			e = e || window.event;
-			console.log(e.key)
             let newMaze = Movements(maze, e.key)
             setMaze([...newMaze])
-            console.log(maze)
 		}
 	});
 
