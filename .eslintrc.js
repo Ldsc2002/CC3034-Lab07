@@ -20,7 +20,6 @@ module.exports = {
   ],
   rules: {
     "no-use-before-define": "off",
-    "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
     "no-irregular-whitespace": "off",
     "import/no-unresolved": "off",
