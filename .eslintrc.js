@@ -19,6 +19,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    "semi": [1, "never"],
     "no-use-before-define": "off",
     "react/jsx-filename-extension": "off",
     "no-irregular-whitespace": "off",

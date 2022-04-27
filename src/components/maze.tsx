@@ -1,5 +1,5 @@
-import React from 'react';
-import { hot } from 'react-hot-loader/root';
+import React from 'react'
+import { hot } from 'react-hot-loader/root'
 
 function Maze({ maze }) {
   return (
@@ -8,7 +8,7 @@ function Maze({ maze }) {
         <p>{temp}</p>
       ))}
     </div>
-  );
+  )
 }
 
-export default hot(Maze);
+export default hot(Maze)
